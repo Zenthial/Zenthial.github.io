@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,42 +11,48 @@
     
     <p>The objective of this project is to create a 3D ocean simulation using mesh deformation, the Fast Fourier Transform, and 3D graphic shaders. This project will use many computational geometry techniques, such as ray tracing, and triangulation, as well as more advanced mathematical topics, such as space partitioning, frequency and time domain analysis, and oceanographic spectra, which when combined, aim to produce realistic and dynamic visualizations of ocean surfaces and subsurface interactions.</p>
     
-    <p>Realistic ocean simulations exist already, both in many modern games, and just ocean simulations by themselves. This project aims to accomplish similar things to past implementations, but with a web-deliverable. Many ocean simulations are full-fledged games, written in C++ or C# in Unreal Engine or Unity. This project aims to work entirely in the browser, using WASM and WebGL to render 3D environments in the browser. The implementation language of choice will be Rust.</p>
-    
-    <h2>Timeline</h2>
-    
+    <p>Realistic ocean simulations exist already, both in many modern games, and just ocean simulations by themselves. This project aims to accomplish similar things to past implementations, but with a web-deliverable. Many ocean simulations are full-fledged games, written in C++ or C# in Unreal Engine or Unity. This project aims to work entirely in the browser, using WASM and WebGL to render 3D environments in the browser. The implementation language of choice is C#.</p>
+
+    <h2>Summary of the Final Presentation</h2>
+    <h3>Overview</h3>
     <ul>
-        <li><strong>Week 5 (Sept 22nd -&gt; 28th)</strong>
-            <ul>
-                <li>Finish reading my reference material</li>
-                <li>Begin learning WebGL, get basic 2D rendering in the browser</li>
-            </ul>
-        </li>
-        <li><strong>Week 6 (Sept 29th -&gt; Oct 5th)</strong>
-            <ul>
-                <li>Get basic simulation implemented</li>
-                <li>Simple shaders, tiling allowed</li>
-                <li>Present to the class about project</li>
-            </ul>
-        </li>
-        <li><strong>Week 7 &amp; 8 (Oct 6th -&gt; 19th)</strong>
-            <ul>
-                <li>Begin fleshing out project from a simple wave representation to a realistic looking ocean</li>
-            </ul>
-        </li>
-        <li><strong>Week 9 &amp; 10 (Oct 20th -&gt; Nov 2nd)</strong>
-            <ul>
-                <li>Finish implementation of the first draft final project</li>
-                <li>Present to class in the 10th week</li>
-            </ul>
-        </li>
-        <li><strong>Weeks 11 -&gt; Final Presentation</strong>
-            <ul>
-                <li>Implement class feedback, continue fleshing out and adding additional features to the simulation</li>
-                <li>Implement stretch goals, such as buoyancy simulations</li>
-            </ul>
-        </li>
+        <li>3D Real-time Ocean Wave Simulation</li>
+        <li>Large body of water with realistic waves using the Fast Fourier Transform</li>
+        <li>Realistic water appearance: reflections, refractions, and foams</li>
     </ul>
+
+    <h3>Applications & Related Work</h3>
+    <ul>
+        <li>Used in video games like <em>Sea of Thieves</em>, <em>Atlas</em>, and <em>Uncharted 4</em>, as well as films</li>
+        <li>Typically simulated using the Fast Fourier Transform, referencing the Tessendorf paper</li>
+    </ul>
+
+    <h3>Basic Idea</h3>
+    <p>The Fast Fourier Transform efficiently computes millions of waves by representing the wave height field at horizontal positions and time. The Phillips spectrum is used to simulate wind-generated waves.</p>
+    <figure>
+        <img src="fft.png" alt="Wave Heightmap Output">
+        <figcaption>Wave Heightmap Output</figcaption>
+    </figure>
+
+    <h3>Implementation</h3>
+    <ul>
+        <li>Simulation implemented in C# using OpenGL</li>
+        <li>FFT computations performed on the GPU with compute shaders</li>
+        <li>Water mesh optimized with GPU tessellation</li>
+    </ul>
+
+    <h3>Foam Implementation</h3>
+    <p>Foam is created at wave collision points, blended with water color, and decays over time for realistic effects.</p>
+
+    <h3>Reflections</h3>
+    <p>Reflections are implemented using ray tracing. Rays are cast and reflected off the water surface, with the intersection points determining the reflection color.</p>
+
+    <h3>Demo</h3>
+    <p>A live demonstration of the project highlights the realistic water simulation, foam dynamics, and reflections.</p>
+
+    <h2>Download Project Files</h2>
+    <p>Click the link below to download the project files:</p>
+    <a href="project-files.zip" download="3D-Ocean-Simulation.zip">Download Project Files</a>
 </body>
 </html>
 
